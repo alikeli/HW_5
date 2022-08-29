@@ -1,29 +1,65 @@
+import java.util.Arrays;
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        /*int[] weights = {90, 91, 93, 92, 85, 87, 88, 89, 0, 0, 0, 0
-        };
-        weights[0] = 90;
-        int januaryWeight = weights[0];
-        System.out.println(januaryWeight);
-        System.out.println(weights[0]);
-        System.out.println(weights[4]);
-        int january = 0;
-        System.out.println(weights[january]);
-        for (int i = 0; i < weights.length; i++) {
-            System.out.println(weights[i]);
-        }*/
+        //Task 1
+        int[] arr = generateRandomArray();  // массив случайных чисел
 
 
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+        }
+        System.out.printf("Сумма трат за месяц составила %s рублей.\n", sum);
 
-        int[] arr = new int[10];
-
-        for (int index = 0; index < arr.length; index++) {
-            if (index == arr.length - 1) {
-                System.out.println(arr[index]);
-                break;
+        //Task 2
+        arr = generateRandomArray();  // массив случайных чисел
+        int maxCost = 99999;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > maxCost) {
+                maxCost = arr[i];
             }
-            System.out.print(arr[index] + " ");
+        }
+        int minCost = 200001;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < minCost) {
+                minCost = arr[i];
+            }
+        }
+        System.out.printf("Минимальная сумма трат за день составила %s рублей.Максимальная сумма трат за день составила %s рублей \n", minCost, maxCost);
+
+        //Task 3
+        arr = generateRandomArray();  // массив случайных чисел
+        double averageSum = 0;
+        double days = 30;
+        for (int i = 0; i < arr.length; i++) {
+            averageSum = averageSum + arr[i];
+            averageSum = averageSum / days;
         }
 
+        System.out.printf("Средняя сумма трат за месяц составила %s рублей.\n", averageSum);
+        //Task 4
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
+
+
     }
+
+
+    int[] arr = generateRandomArray();
+
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+            //System.out.println(arr);
+        }
+        return arr;
+    }
+
+
 }
