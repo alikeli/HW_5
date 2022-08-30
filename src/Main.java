@@ -31,13 +31,13 @@ public class Main {
 
         //Task 3
         arr = generateRandomArray();  // массив случайных чисел
-        double averageSum = 0;
+        int sum2 = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum = sum + arr[i];
+            sum2 = sum2 + arr[i];
 
         }
-        averageSum = (double) sum / arr.length;
-        System.out.println(sum); //общая сумма
+         double averageSum = (double) sum2 / arr.length;
+        System.out.println(sum2); //общая сумма
 
         System.out.printf("Средняя сумма трат за месяц составила %s рублей.\n", averageSum);
         //Task 4
