@@ -48,8 +48,6 @@ public class Main {
 
 
     }
-
-
     int[] arr = generateRandomArray();
 
     public static int[] generateRandomArray() {
